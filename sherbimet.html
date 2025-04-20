@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shërbimet Mjekësore</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Shirit Navigimi -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> <i class="fas fa-heartbeat"></i> Klinika Shëndeti</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-house-user"></i>Faqja Kryesore</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rezervime.html"><i class="fas fa-calendar-day"></i>Rezervimet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kontakt.html"><i class="fas fa-phone"></i>Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-4">
+        <h1>Shërbimet Mjekësore</h1>
+        <p>Ofrojmë kujdes shëndetësor me cilësi të lartë dhe teknologjinë më të avancuar</p>
+    </header>
+
+    <!-- Seksioni i shërbimeve -->
+    <div class="container mt-5">
+        <div class="row" id="services"></div>
+    </div>
+
+     <!-- Seksioni i lojërave -->
+<div class="container mt-5" id="games">
+    <h2 class="text-center mb-4">Lojëra</h2>
+    <div class="row">
+        <!-- Loja e Memories -->
+        <div class="col-md-4">
+            <div class="game-card">
+                <h5>Loja e Memories</h5>
+                <iframe src="https://www.memorymatching.com/" width="100%" height="300" frameborder="0"></iframe>
+            </div>
+        </div>
+        <!-- Loja e Menaxhimit të Stresit -->
+        <div class="col-md-4">
+            <div class="game-card">
+                <h5>Loja e Menaxhimit të Stresit</h5>
+                <iframe src="https://lagged.com/en/g/antistress-simulator" width="100%" height="300" frameborder="0"></iframe>
+            </div>
+        </div>
+        <!-- Loja e Zgjedhjes së Ushqimeve të Shëndetshme -->
+        <div class="col-md-4">
+            <div class="game-card">
+                <h5>Loja e Zgjedhjes së Ushqimeve të Shëndetshme</h5>
+                <iframe src="https://www.healthyeating.org/products-and-activities/games-activities/myplate" width="100%" height="300" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Modal për detajet e shërbimit -->
+    <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serviceTitle"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="serviceShortDesc"></p>
+                    <p id="serviceDescription"></p>
+                    <!-- Video nga YouTube -->
+                    <div id="serviceVideo"></div>
+                    <p id="servicePrice"></p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" id="reserveBtn" class="btn btn-primary">Rezervo Tani</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="sherbimet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    $(document).ready(function () {
+        let sherbimet = [
+            { 
+                emri: "Vizita Mjekësore", 
+                pershkrimi: "Kontrolle të përgjithshme dhe specialistike për diagnozën tuaj.", 
+                shpjegim: "Vizitat mjekësore janë thelbësore për të monitoruar shëndetin dhe për të parandaluar sëmundjet.", 
+                link: "rezervime.html",
+                ikone: "fa-user-md",
+                video: "https://www.youtube.com/watch?v=ycPUPBNFTTs",
+                cmimi: "1000 Lekë"
+            },
+            { 
+                emri: "Grafi (Radiografi)", 
+                pershkrimi: "Ekzaminime për kockat dhe organet e brendshme.", 
+                shpjegim: "Radiografia është një teknikë diagnostike që ndihmon në identifikimin e frakturave dhe problemeve skeletore.", 
+                link: "rezervime.html",
+                ikone: "fa-x-ray",
+                video: "https://www.youtube.com/watch?v=hTz_rGP4v9Y",
+                cmimi: "1500 Lekë"
+            },
+            { 
+                emri: "Mamografi", 
+                pershkrimi: "Kontrolle për diagnostikimin e hershëm të kancerit të gjirit.", 
+                shpjegim: "Mamografia është një test jetik për gratë mbi 40 vjeç për të zbuluar ndryshime në inde gjiri.", 
+                link: "rezervime.html",
+                ikone: "fa-ribbon",
+                video: "https://www.youtube.com/watch?v=JYohlADZTQs",
+                cmimi: "1200 Lekë"
+            },
+            { 
+                emri: "Analiza Laboratorike", 
+                pershkrimi: "Testime për të vlerësuar gjendjen shëndetësore.", 
+                shpjegim: "Analizat e gjakut dhe të urinës ndihmojnë në identifikimin e anomalive dhe monitorimin e shëndetit.", 
+                link: "rezervime.html",
+                ikone: "fa-vials",
+                video: "https://www.youtube.com/watch?v=B0nDpbP9b40",
+                cmimi: "800 Lekë"
+            },
+            { 
+                emri: "Ekografi dhe Kontroll Kardiologjik", 
+                pershkrimi: "Ekzaminime të avancuara për zemrën dhe organet e brendshme.", 
+                shpjegim: "Ekografia përdoret për të diagnostikuar sëmundjet e organeve të brendshme dhe për të monitoruar funksionin e zemrës.", 
+                link: "rezervime.html",
+                ikone: "fa-heartbeat",
+                video: "https://www.youtube.com/watch?v=72jPsdVFxlg",
+                cmimi: "2000 Lekë"
+            }
+        ];
+
+        let servicesContainer = $("#services");
+
+        $.each(sherbimet, function (index, sherbimi) {
+            let serviceHTML = `
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card" data-name="${sherbimi.emri}" 
+                        data-shortdesc="${sherbimi.shpjegim}" 
+                        data-info="${sherbimi.pershkrimi}" 
+                        data-link="${sherbimi.link}" 
+                        data-video="${sherbimi.video}" 
+                        data-price="${sherbimi.cmimi}">
+                        <i class="service-icon fas ${sherbimi.ikone}"></i>
+                        <h4>${sherbimi.emri}</h4>
+                        <p>${sherbimi.pershkrimi}</p>
+                        <a href="#" class="btn-custom open-modal">Më shumë</a>
+                    </div>
+                </div>
+            `;
+            servicesContainer.append(serviceHTML);
+        });
+
+        $(".open-modal").click(function () {
+            let card = $(this).closest(".service-card");
+            $("#serviceTitle").text(card.data("name"));
+            $("#serviceShortDesc").text(card.data("shortdesc"));
+            $("#serviceDescription").text(card.data("info"));
+            $("#reserveBtn").attr("href", card.data("link"));
+            $("#servicePrice").text("Çmimi: " + card.data("price"));
+
+            let videoLink = card.data("video");
+            let videoEmbed = `<iframe width="100%" height="315" src="https://www.youtube.com/embed/${videoLink.split('v=')[1]}" frameborder="0" allowfullscreen></iframe>`;
+            $("#serviceVideo").html(videoEmbed);
+
+            $("#serviceModal").modal("show");
+        });
+    });
+    
+    </script>
+    <style>
+    /* Stilet për të gjithë faqen */
+    .navbar {
+        background: linear-gradient(to right, #007bff, #00b4db); 
+    }
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #bcd4e6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #007bff, #00b4db);
+}
+
+/* Seksioni i shërbimeve */
+.service-card {
+    border-radius: 8px;
+    background: white;
+    border: 2px solid #ffc1cc; /* Kufiri për secilën kartë */
+    box-shadow: 0 4px 10px #007bff(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Modifikimi i ngjyrës për ikonat dhe tekstin brenda kartave */
+.service-card i, /* Ikonat */
+.service-card h4, /* Titulli */
+.service-card p { /* Përshkrimi */
+    color: #007bff; /* Ngjyrë blu për ikonat, titujt dhe tekstet */
+}
+
+/* Ikonat */
+.service-icon {
+    font-size: 50px;
+    color: #007bff; /* Ngjyrë blu për ikonat */
+    margin-bottom: 15px;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px #007bff(0, 0, 0, 0.15);
+}
+
+/* Butoni për hapjen e modalit */
+.btn-custom {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-custom:hover {
+    background-color: black;
+    transform: scale(1.05);
+}
+
+/* Modal */
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    background: #007bff;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.modal-body {
+    font-size: 16px;
+    color: black;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+/* Footer */
+footer {
+    background: black;
+    color: white;
+}
+
+/* Efekt animacioni për shfaqjen e kartave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-card {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Seksioni i lojërave */
+#games {
+    background-color: #f8f9fa;
+    padding: 40px 0;
+}
+
+.game-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.game-card iframe {
+    border-radius: 8px;
+    border: none;
+}
+
+
+.game-card h5 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+    </style>
+</body>
+</html>

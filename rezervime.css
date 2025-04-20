@@ -1,0 +1,281 @@
+   /* Stilet për të gjithë faqen */
+   body {
+    font-family: 'Arial', sans-serif;
+    background-color: #bcd4e6;;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(to right, #007bff, #00b4db);
+}
+
+.navbar-brand i {
+    margin-right: 10px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #007bff, #00b4db);
+    color: white;
+    padding: 40px 0;
+}
+
+header h1 {
+    font-size: 36px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+}
+
+header p {
+    font-size: 18px;
+}
+
+/* Shirit Navigimi */
+.navbar-nav .nav-link {
+    color: white !important;
+    font-size: 16px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffcc00 !important;
+}
+
+/* Butonat */
+#tabs {
+    text-align: center;
+    margin-top: 50px;
+}
+
+button {
+    padding: 15px 40px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Formulari i pacientit */
+.form {
+    margin: 20px auto;
+    max-width: 500px;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form input, .form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+.form input[type="date"], .form input[type="time"] {
+    padding: 8px;
+}
+
+/* Modal Login */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.modal .close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.modal .close:hover,
+.modal .close:focus {
+    color: black;
+}
+
+/* Rezervimet e Pacientëve - Cards Horizontal */
+
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    flex: 0 0 30%; /* Përcakton që karta të marrë 30% të gjerësisë së kutisë */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.card button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: transform 0.2s;
+}
+
+
+
+.card .delete-btn {
+    background-color: #ff4136;
+    color: white;
+}
+
+.card .delete-btn:hover {
+    background-color: #d43f3a;
+    transform: scale(1.05);
+}
+
+/* Statistikat */
+#statistikat {
+    margin-top: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#statistikat h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#statistikat p {
+    font-size: 18px;
+    color: #555;
+}
+
+#statistikat ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#statistikat li {
+    font-size: 18px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    color: #666;
+}
+
+/* Buton i ri për filtrin e rezervimeve */
+#filters button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#filters button:hover {
+    background-color: #218838;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #rezervimetStaf {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form {
+        padding: 20px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    .card {
+        flex: 0 0 100%;
+    }
+
+    button {
+        width: 80%;
+        font-size: 16px;
+    }
+}
+
+/* Stilet për butonin "Mark as Completed" */
+.mark-completed-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.mark-completed-btn:hover {
+    background-color: #218838;
+}
+
+/* Stilet për statusin e përfunduar */
+.card p strong {
+    color: #28a745; /* Gjelbër për statusin 'Completed' */
+}

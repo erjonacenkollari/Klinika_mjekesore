@@ -1,0 +1,128 @@
+/* Stilet për të gjithë faqen */
+.navbar {
+    background: linear-gradient(to right, #007bff, #00b4db); 
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #bcd4e6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #007bff, #00b4db);
+}
+
+/* Seksioni i shërbimeve */
+.service-card {
+    border-radius: 8px;
+    background: white;
+    border: 2px solid #ffc1cc; /* Kufiri për secilën kartë */
+    box-shadow: 0 4px 10px #007bff(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px #007bff(0, 0, 0, 0.15);
+}
+
+/* Modifikimi i ngjyrës për ikonat dhe tekstin brenda kartave */
+.service-card i, /* Ikonat */
+.service-card h4, /* Titulli */
+.service-card p { /* Përshkrimi */
+    color: #007bff; /* Ngjyrë blu për ikonat, titujt dhe tekstet */
+}
+
+/* Ikonat */
+.service-icon {
+    font-size: 50px;
+    color: #007bff; /* Ngjyrë blu për ikonat */
+    margin-bottom: 15px;
+}
+
+/* Butoni për hapjen e modalit */
+.btn-custom {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-custom:hover {
+    background-color: black;
+    transform: scale(1.05);
+}
+
+/* Modal */
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    background: #007bff;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.modal-body {
+    font-size: 16px;
+    color: black;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+/* Footer */
+footer {
+    background: black;
+    color: white;
+}
+
+/* Efekt animacioni për shfaqjen e kartave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-card {
+    animation: fadeIn 0.6s ease-in-out;
+}
+/* Seksioni i lojërave */
+#games {
+    background-color: #f8f9fa;
+    padding: 40px 0;
+}
+
+.game-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.game-card iframe {
+    border-radius: 8px;
+    border: none;
+}
+
+
+.game-card h5 {
+    color: #007bff;
+    margin-bottom: 15px;
+}

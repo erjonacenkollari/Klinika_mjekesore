@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faqja kryesore</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  </head>
+  <body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html"><i class="fas fa-heartbeat"></i>Klinika Shendeti</a>
+          
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="sherbimet.html"><i class="fas fa-stethoscope"></i> Sherbimet</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="rezervime.html"><i class="fas fa-calendar-alt"></i> Rezervimet</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kontakt.html"><i class="fas fa-phone-alt"></i> Kontakt</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+     <!-- Header -->
+     <header class="bg-primary text-white text-center py-4">
+        <h1> Faqja kryesore</h1>
+        <p>Mire se vini ne kliniken Shendeti!</p>
+        <p>Ofrojmë kujdes shëndetësor me cilësi të lartë dhe teknologjinë më të avancuar</p>
+    </header>
+      
+      <div class="text-center">
+        <!-- Teksti "Më shumë..." -->
+        <a
+          href="#"
+          class="text-info"
+          data-bs-toggle="modal"
+          data-bs-target="#infoModal"
+        >
+          Më shumë...
+        </a>
+      </div>
+    </div>
+
+    </div>
+    
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">Komentet e Vizitorëve</h2>
+      <div id="komenteContainer" class="d-flex flex-wrap justify-content-center"></div>
+  </div>
+  
+    
+    <!-- Modal për editim -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">Edito Komentin</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Mbyll"></button>
+          </div>
+          <div class="modal-body">
+            <form id="editForm">
+              <input type="hidden" id="editIndex" />
+              <div class="mb-3">
+                <label for="editEmer" class="form-label">Emri</label>
+                <input type="text" class="form-control" id="editEmer" required>
+              </div>
+              <div class="mb-3">
+                <label for="editMbiemer" class="form-label">Mbiemri</label>
+                <input type="text" class="form-control" id="editMbiemer" required>
+              </div>
+              <div class="mb-3">
+                <label for="editVleresim" class="form-label">Vlerësimi (1-5)</label>
+                <input type="number" class="form-control" id="editVleresim" min="1" max="5" required>
+              </div>
+              <div class="mb-3">
+                <label for="editMesazh" class="form-label">Mesazhi</label>
+                <textarea class="form-control" id="editMesazh" rows="3" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-success">Ruaj Ndryshimet</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  
+      
+     <!-- Modal-i për informacionin -->
+     <div
+     class="modal fade"
+     id="infoModal"
+     tabindex="-1"
+     aria-labelledby="infoModalLabel"
+     aria-hidden="true"
+   >
+     <div class="modal-dialog modal-lg">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="infoModalLabel">Rreth Klinikes Shendeti</h5>
+           <button
+             type="button"
+             class="btn-close"
+             data-bs-dismiss="modal"
+             aria-label="Mbyll"
+           ></button>
+         </div>
+         <div class="modal-body">
+           <h6>Informacione Rreth Nesh</h6>
+           <p>
+             Klinika "Shendeti" eshte nje qender shendetesore bashkekohore e cila jep sherbime shendetesore cilesore dhe te individualizuara.
+             Me perkushtim te plote per mireqenien tuaj absolute,ne kemi ndertuar nje mjedis ku profesionalizmi i larte dhe teknologjia e avancuar bashkpunojne ngushte per te ofruar nje eksperience te paharrueshme plotesisht.
+            </p>
+
+            <p>
+            <h11>Stafi Mjekesor: Ekipi yne mjekesor perbehet nga profesioniste te kualifikuar me nje eksperience prej 10 vitesh ne fusha te ndryshme te mjekesise.
+              Ata jane teresisht te dedikuara qe t'ju ofrojne sherbime sa me te sigurta e te besueshme me nje perkushtim te plote ndaj pacientit.</h11> 
+           </p>
+           <p>
+            <h12>Sherbimet qe ofrojme: Vizita mjekesore , grafi(radiografi) , mamografi , analiza laburatorike , ekografi , kontroll kardiologjik</h12>
+           </p>
+           <!-- Grafikët -->
+           <h6>Statistika dhe Grafikë</h6>
+           <img
+           src="grafiku.png"
+           class="img-fluid"
+           style="max-width: 90%; height: auto;"
+           alt="Grafiku i suksesit të trajtimeve"
+         />
+                              
+           <p>
+            Grafiku përfaqëson përqindjen e  suksesit qe pacientet kane pasur nga trajtimet tona mjekesore dhe nga stafi yne i specialisteve.
+           </p>
+
+           <p>Faleminderit qe i keni besuar klinikes "Shendeti"!📊🏥</p>
+         </div>
+         <div class="modal-footer">
+           <button
+             type="button"
+             class="btn btn-secondary"
+             data-bs-dismiss="modal"
+           >
+             Mbyll
+           </button>
+         </div>
+       </div>
+     </div>
+   </div>
+  
+      <!-- Me shume informacion -->
+    <footer class="bg-dark text-white text-center p-4 mt-5">
+        <p>&copy; 2025 Klinika Shendeti. Te gjitha te drejtat te rezervuara.</p>
+        <p>Na ndiqni ne:
+          <div class="socials">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </p>
+      </footer>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  </script>
+    <script src="index.js"></script>
+
+     
+      <!-- Skripti për Shtim, Fshirje dhe Shfaqje/Fshehje të Komenteve -->
+    
+   
+   
+      <script>
+        const apiUrl = "http://localhost:5134/api/Komentis";
+        
+        function shkarkoKomentet() {
+            fetch(apiUrl)
+                .then(res => res.json())
+                .then(komentet => {
+                    const container = document.getElementById("komenteContainer");
+                    container.innerHTML = ""; // Pastro para ngarkimit
+        
+                    komentet.forEach(koment => {
+                        const card = document.createElement("div");
+                        card.className = "card m-2 p-3 shadow";
+                        card.style.backgroundColor = "#e3f2fd";
+        
+                        card.innerHTML = `
+                            <h5>${koment.emri} ${koment.mbiemri} 
+                                <small class="text-muted">(${koment.vleresimiNeYje} ⭐)</small>
+                            </h5>
+                            <p>${koment.komentiTekst}</p>
+                            <div class="mt-2">
+                                <button class="btn btn-sm btn-warning me-2" onclick="editoKoment(${koment.id})">Edito</button>
+                                <button class="btn btn-sm btn-danger" onclick="fshijKoment(${koment.id})">Fshij</button>
+                            </div>
+                        `;
+                        container.appendChild(card);
+                    });
+                });
+        }
+        
+        function fshijKoment(id) {
+            if (confirm("A jeni i sigurt që doni ta fshini këtë koment?")) {
+                fetch(`${apiUrl}/${id}`, { method: "DELETE" })
+                    .then(res => {
+                        if (res.ok) shkarkoKomentet();
+                        else alert("Gabim gjatë fshirjes!");
+                    });
+            }
+        }
+        
+        function editoKoment(id) {
+            const komentiTekst = prompt("Vendos komentin e ri:");
+            const vleresimiNeYje = prompt("Vendos vlerësimin e ri (1-5):");
+        
+            if (komentiTekst && vleresimiNeYje) {
+                fetch(`${apiUrl}/${id}`, {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        komentiTekst,
+                        vleresimiNeYje: parseInt(vleresimiNeYje)
+                    })
+                })
+                .then(res => {
+                    if (res.ok) shkarkoKomentet();
+                    else alert("Gabim gjatë përditësimit!");
+                });
+            }
+        }
+        
+        window.onload = shkarkoKomentet;
+        </script>
+        
+
+
+
+   
+
+    <style>
+        /* Stilet për të gjithë faqen me dizajn të ngjashëm me navbar */
+        .navbar {
+    background: linear-gradient(to right, #007bff, #00b4db); 
+}
+.navbar i{
+    color: white !important;
+}
+
+.navbar .nav-link {
+  color: white !important;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #bcd4e6;;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+/* Stilet për butonat kryesorë */
+.btn-custom {
+  background: linear-gradient(to right, #007bff, #00b4db);
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  background: linear-gradient(to right, #0056b3, #0099cc);
+  transform: scale(1.05);
+}
+
+/* Stilet për kartat e komenteve */
+.card {
+  border: 1px solid #00b4db;
+  border-left: 5px solid #007bff;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* Header */
+header {
+  background: linear-gradient(to right, #007bff, #00b4db);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+  background: #1a1a1a;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer a {
+  color: #00b4db;
+  margin: 0 5px;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+/* Animacione për dalje në faqe */
+@keyframes fadeInSoft {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInSoft 0.6s ease-out;
+}
+
+/* Stil modern për butonin "Më shumë..." */
+a.text-info[data-bs-toggle="modal"] {
+  display: inline-block;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white !important;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 30px;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
+}
+
+a.text-info[data-bs-toggle="modal"]:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+  text-decoration: none;
+}
+
+/* Komente me ngjyrë të bardhë */
+#reviewsSection .card-body {
+  background-color: white;
+  color: black;
+}
+
+#reviewsSection .card-body blockquote {
+  background-color: white;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.text-warning {
+    color: #ffc107 !important;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+
+
+
+    </style>
+  </body>
+</html>
